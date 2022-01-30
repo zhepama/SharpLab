@@ -7,6 +7,10 @@ C# compiler playground.
 ```
 yum install https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm
 yum install git -y
+cd ~
+touch .git-credentials
+git config --global credential.helper store
+cat .gitconfig
 ```
 
 ## ubuntu 安装net6.0
