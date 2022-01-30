@@ -2,6 +2,13 @@
 
 C# compiler playground.
 
+## 安装git2
+
+```
+yum install https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm
+yum install git -y
+```
+
 ## ubuntu 安装net6.0
 
 ```bash
@@ -18,11 +25,16 @@ apt-get install -y dotnet-sdk-6.0
 
 ```bash
 sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
-sudo yum install dotnet-sdk-6.0
+sudo yum install dotnet-sdk-6.0 
 ```
 
-## 启动ss
+## centeros安装code server
 
-```bash
-sslocal -c /etc/shadowsocks.json -d start     
+```
+curl -fOL https://github.com/cdr/code-server/releases/download/v$VERSION/code-server-$VERSION-amd64.rpm
+sudo rpm -i code-server-$VERSION-amd64.rpm
+sudo systemctl enable --now code-server@$USER
+# Now visit http://127.0.0.1:8080. Your password is in ~/.config/code-server/config.yaml
+sudo systemctl start code-server@$USER
+sudo systemctl stop code-server@$USER
 ```
